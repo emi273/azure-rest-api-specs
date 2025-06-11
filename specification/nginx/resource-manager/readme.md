@@ -47,19 +47,15 @@ suppressions:
   - code: PutRequestResponseSchemeArm
     from: openapi.json
     where: $.paths["/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Nginx.NginxPlus/nginxDeployments/{nginxDeploymentName}/apiKeys/{apiKeyName}"]
-    reason: This is by design as agreed with the partner
+    reason: This is by design. Request contains a customer provided secret that is not returned in the response. 
   - code: PutRequestResponseSchemeArm
     from: openapi.json
     where: $.paths["/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Nginx.NginxPlus/nginxDeployments/{nginxDeploymentName}/configurations/{configurationName}"]
-    reason: This is by design as agreed with the partner
+    reason: This is by design. We do not return provided file contents in the response. 
   - code: PutResponseCodes
     from: openapi.json
     where: $.paths["/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Nginx.NginxPlus/nginxDeployments/{nginxDeploymentName}/apiKeys/{apiKeyName}"]
-    reason: This is by design as agreed with the partner
-  - code: PutResponseCodes
-    from: openapi.json
-    where: $.paths["/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Nginx.NginxPlus/nginxDeployments/{nginxDeploymentName}/configurations/{configurationName}"]
-    reason: This is by design as agreed with the partner
+    reason: This is a synchronous API, hence we're not returning a 200. 
   - code: PostResponseCodes
     from: openapi.json
     where: $.paths["/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Nginx.NginxPlus/nginxDeployments/{nginxDeploymentName}/configurations/{configurationName}/analyze"]
