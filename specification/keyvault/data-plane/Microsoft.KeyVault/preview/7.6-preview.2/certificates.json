@@ -163,7 +163,7 @@
             "name": "certificate-version",
             "in": "path",
             "description": "The version of the certificate. This URI fragment is optional. If not specified, the latest version of the certificate is returned.",
-            "required": false,
+            "required": true,
             "type": "string",
             "x-ms-client-name": "certificateVersion"
           }
@@ -208,7 +208,7 @@
             "name": "certificate-version",
             "in": "path",
             "description": "The version of the certificate.",
-            "required": false,
+            "required": true,
             "type": "string",
             "x-ms-client-name": "certificateVersion"
           },
@@ -1700,8 +1700,7 @@
           "items": {
             "$ref": "#/definitions/LifetimeAction"
           },
-          "x-ms-client-name": "lifetimeActions",
-          "x-ms-identifiers": []
+          "x-ms-client-name": "lifetimeActions"
         },
         "issuer": {
           "$ref": "#/definitions/IssuerParameters",
@@ -1810,8 +1809,7 @@
           "items": {
             "$ref": "#/definitions/Contact"
           },
-          "x-ms-client-name": "ContactList",
-          "x-ms-identifiers": []
+          "x-ms-client-name": "ContactList"
         }
       }
     },
@@ -2334,8 +2332,7 @@
           "description": "Details of the organization administrator.",
           "items": {
             "$ref": "#/definitions/AdministratorDetails"
-          },
-          "x-ms-identifiers": []
+          }
         }
       }
     },

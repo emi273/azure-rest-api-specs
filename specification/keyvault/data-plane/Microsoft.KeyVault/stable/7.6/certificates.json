@@ -1700,8 +1700,7 @@
           "items": {
             "$ref": "#/definitions/LifetimeAction"
           },
-          "x-ms-client-name": "lifetimeActions",
-          "x-ms-identifiers": []
+          "x-ms-client-name": "lifetimeActions"
         },
         "issuer": {
           "$ref": "#/definitions/IssuerParameters",
@@ -1810,8 +1809,7 @@
           "items": {
             "$ref": "#/definitions/Contact"
           },
-          "x-ms-client-name": "ContactList",
-          "x-ms-identifiers": []
+          "x-ms-client-name": "ContactList"
         }
       }
     },
@@ -2006,6 +2004,7 @@
     },
     "Error": {
       "type": "object",
+      "description": "The key vault server error.",
       "properties": {
         "code": {
           "type": "string",
@@ -2018,13 +2017,12 @@
           "readOnly": true
         },
         "innererror": {
-          "$ref": "#/definitions/Error",
+          "$ref": "#/definitions/NullableError",
           "description": "The key vault server error.",
           "readOnly": true,
           "x-ms-client-name": "innerError"
         }
-      },
-      "x-nullable": true
+      }
     },
     "IssuerAttributes": {
       "type": "object",
@@ -2297,7 +2295,7 @@
       "description": "The key vault error exception.",
       "properties": {
         "error": {
-          "$ref": "#/definitions/Error",
+          "$ref": "#/definitions/NullableError",
           "description": "The key vault server error.",
           "readOnly": true
         }
@@ -2317,6 +2315,10 @@
         }
       }
     },
+    "NullableError": {
+      "$ref": "#/definitions/Error",
+      "x-nullable": true
+    },
     "OrganizationDetails": {
       "type": "object",
       "description": "Details of the organization of the certificate issuer.",
@@ -2330,8 +2332,7 @@
           "description": "Details of the organization administrator.",
           "items": {
             "$ref": "#/definitions/AdministratorDetails"
-          },
-          "x-ms-identifiers": []
+          }
         }
       }
     },
