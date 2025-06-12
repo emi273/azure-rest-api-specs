@@ -195,13 +195,8 @@
       }
     },
     "NullableError": {
-      "type": "object",
-      "x-nullable": true,
-      "allOf": [
-        {
-          "$ref": "#/definitions/Error"
-        }
-      ]
+      "$ref": "#/definitions/Error",
+      "x-nullable": true
     },
     "Setting": {
       "type": "object",
@@ -253,8 +248,7 @@
           "items": {
             "$ref": "#/definitions/Setting"
           },
-          "readOnly": true,
-          "x-ms-identifiers": []
+          "readOnly": true
         }
       }
     },

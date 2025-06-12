@@ -680,13 +680,8 @@
       }
     },
     "NullableError": {
-      "type": "object",
-      "x-nullable": true,
-      "allOf": [
-        {
-          "$ref": "#/definitions/Error"
-        }
-      ]
+      "$ref": "#/definitions/Error",
+      "x-nullable": true
     },
     "Permission": {
       "type": "object",
@@ -911,8 +906,7 @@
           "description": "Role definition permissions.",
           "items": {
             "$ref": "#/definitions/Permission"
-          },
-          "x-ms-identifiers": []
+          }
         },
         "assignableScopes": {
           "type": "array",
